@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+<struts-config>
+    <form-beans>
+        <form-bean name="UserForm" type="org.struts1.form.UserForm"/>
+        
+    </form-beans>
+    <global-exceptions>
+    
+    </global-exceptions>
+
+    <global-forwards>
+        <forward name="welcome"  path="/Welcome.do"/>
+    </global-forwards>
+<action-mappings>
+<action input="/index.jsp" parameter="method" name="UserForm" 
+path="/UserAction" scope="session" type="org.struts1.action.UserAction">
+	<forward name="success" path="/index.jsp" />
+</action>
+
+</action-mappings>
+</struts-config>
